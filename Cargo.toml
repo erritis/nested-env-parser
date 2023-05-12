@@ -1,0 +1,20 @@
+[package]
+name = "nested-env-parser"
+version = "1.0.0"
+edition = "2021"
+description = "Nested Env Parser is a crate for getting the final value of a string with nested environment variables."
+keywords = [ "config", "clap" ]
+categories = [ "config" ]
+authors = ["Erritis <serg.shehov@tutanota.com>"]
+readme = "README.md"
+license = "MIT"
+repository = "https://github.com/erritis/nested-env-parser"
+documentation = "https://docs.rs/nested-env-parser"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+envmnt = "0.10.4"
+
+[dev-dependencies]
+clap = { version = "4.2.7", features = ["derive", "env"] }
