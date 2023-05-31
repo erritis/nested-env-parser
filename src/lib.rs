@@ -29,9 +29,7 @@
 //!
 //!     let opts = Opts::parse();
 //!
-//!     let value: &str = &opts.value_with_env;
-//!
-//!     assert_eq!("Hello, world!", value);
+//!     assert_eq!("Hello, world!", &opts.value_with_env);
 //! }
 //! ```
 //! ## On Windows
@@ -53,9 +51,7 @@
 //!
 //!     let opts = Opts::parse();
 //!
-//!     let value: &str = &opts.value_with_env;
-//!
-//!     assert_eq!("Hello, world!", value);
+//!     assert_eq!("Hello, world!", &opts.value_with_env);
 //! }
 //! ```
 #![warn(missing_docs)]
@@ -95,5 +91,37 @@ impl Deref for Env {
 
     fn deref(&self) -> &Self::Target {
         &self.0
+    }
+}
+
+impl<T> AsRef<T> for Env
+where
+    T: ?Sized,
+    <Env as Deref>::Target: AsRef<T>,
+{
+    fn as_ref(&self) -> &T {
+        self.deref().as_ref()
+    }
+}
+
+impl PartialEq<String> for Env {
+    fn eq(&self, other: &String) -> bool {
+        *self.deref() == *other
+    }
+}
+impl PartialEq<Env> for String {
+    fn eq(&self, other: &Env) -> bool {
+        *self == *other.deref()
+    }
+}
+
+impl PartialEq<str> for Env {
+    fn eq(&self, other: &str) -> bool {
+        *self.deref() == *other
+    }
+}
+impl PartialEq<Env> for str {
+    fn eq(&self, other: &Env) -> bool {
+        *self == *other.deref()
     }
 }

@@ -2,7 +2,7 @@
 [![documentation][docs-badge]][docs-url]
 [![MIT License][mit-badge]][mit-url]
 
-[crates-badge]: https://img.shields.io/crates/v/nested-env-parser.svg
+[crates-badge]: https://img.shields.io/crates/v/nested-env-parser?logo=rust&logoColor=white&style=flat-square
 [crates-url]: https://crates.io/crates/nested-env-parser
 [docs-badge]: https://docs.rs/nested-env-parser/badge.svg
 [docs-url]: https://docs.rs/nested-env-parser

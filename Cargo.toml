@@ -1,6 +1,6 @@
 [package]
 name = "nested-env-parser"
-version = "1.0.0"
+version = "1.1.0"
 edition = "2021"
 description = "Nested Env Parser is a crate for getting the final value of a string with nested environment variables."
 keywords = [ "config", "clap" ]
@@ -17,4 +17,4 @@ documentation = "https://docs.rs/nested-env-parser"
 envmnt = "0.10.4"
 
 [dev-dependencies]
-clap = { version = "4.2.7", features = ["derive", "env"] }
+clap = { version = "4.3.0", features = ["derive", "env"] }
